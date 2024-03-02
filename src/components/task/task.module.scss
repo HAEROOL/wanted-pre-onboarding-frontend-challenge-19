@@ -1,0 +1,17 @@
+.task{
+    width: 85%;
+    height: 50px;
+    padding: 0 10px;
+    display: flex;
+    border: 2px solid black;
+    border-radius: 8px;
+    justify-content: space-between;
+    align-items: center;
+    &__name{
+        display: block;
+        width: 80%;
+        text-overflow: ellipsis;
+        overflow:hidden;
+        font-size: 20px;
+    }
+}
