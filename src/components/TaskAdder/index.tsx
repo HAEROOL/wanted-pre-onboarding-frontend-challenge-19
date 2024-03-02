@@ -22,7 +22,7 @@ export default function TaskAdder() {
 			<input
 				className={styles.adder__input}
 				ref={taskName}
-				onKeyDown={pressEnter}
+				onKeyUp={pressEnter}
 			/>
 			<CommonButton content="Add" clickEvent={addTask} />
 		</div>
