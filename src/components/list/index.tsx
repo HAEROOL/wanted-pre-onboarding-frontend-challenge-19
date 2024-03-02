@@ -1,20 +1,18 @@
+import { useSelector } from "react-redux";
 import TaskAdder from "../TaskAdder";
 import Task from "../task";
 import styles from "./list.module.scss";
-const DUMMY = [
-	{ id: 1, taskName: "todo1" },
-	{ id: 2, taskName: "todo2" },
-	{ id: 3, taskName: "todo3" },
-	{ id: 4, taskName: "todo4" },
-];
+import { RootState } from "../../store/store";
+
 export default function List() {
+	const tasks = useSelector((state: RootState) => state.taskEditor.tasks);
 	return (
 		<section className={styles["todo-list"]}>
 			<div>
 				<TaskAdder />
 				<ul className={styles["todo-list__list"]}>
-					{DUMMY.map((task) => (
-						<Task task={task} />
+					{tasks.map((task) => (
+						<Task task={task} key={task.id} />
 					))}
 				</ul>
 			</div>

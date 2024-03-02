@@ -2,8 +2,15 @@ import styles from "./CommonButton.module.scss";
 
 interface CommonButtonProps {
 	content: string;
-	event?: () => void;
+	clickEvent: () => void;
 }
-export default function CommonButton({ content }: CommonButtonProps) {
-	return <button className={styles.button}>{content}</button>;
+export default function CommonButton({
+	content,
+	clickEvent,
+}: CommonButtonProps) {
+	return (
+		<button className={styles.button} onClick={clickEvent}>
+			{content}
+		</button>
+	);
 }
